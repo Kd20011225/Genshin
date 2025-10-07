@@ -64,7 +64,7 @@ jobs:
         run: |
           python "upgrades.py" \
             --csv "职业强化.csv" \
-            --out "build/职业强化_final_v3.json"
+            --out "build/职业强化.json"
 
       - name: Upload build outputs
         uses: actions/upload-artifact@v4
