@@ -1,0 +1,73 @@
+name: Genshin
+
+on:
+  push:
+    paths:
+      - '**/*.py'
+      - '**/*.csv'
+      - '.github/workflows/genshin.yml'
+  pull_request:
+    paths:
+      - '**/*.py'
+      - '**/*.csv'
+      - '.github/workflows/genshin.yml'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      PYTHONUTF8: "1"
+      PYTHONIOENCODING: "utf-8"
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Make build folder
+        run: mkdir -p build
+
+      # Items → JSON
+      - name: Generate 圣遗物.json
+        run: |
+          python "artifact.py" \
+            --items "圣遗物.csv" \
+            --sets "圣遗物套装表.csv" \
+            --out "build/圣遗物.json" \
+            --struct-id 1077936134 \
+            --start-index 1
+
+      # Items+Sets → TXT
+      - name: Generate 圣遗物.txt
+        run: |
+          python "generate_txt.py" \
+            --items "圣遗物.csv" \
+            --sets "圣遗物套装表.csv" \
+            --out "build/圣遗物.txt" \
+            --max-title-len 200
+
+      # Sets → JSON
+      - name: Generate 圣遗物套装.json
+        run: |
+          python "artifact_set.py" \
+            --csv "圣遗物套装表.csv" \
+            --out "build/圣遗物套装.json" \
+            --struct-id 1077936135
+
+      # 职业强化 → JSON
+      - name: Generate 职业强化.json
+        run: |
+          python "upgrades.py" \
+            --csv "职业强化.csv" \
+            --out "build/职业强化_final_v3.json"
+
+      - name: Upload build outputs
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-outputs
+          path: build/**
