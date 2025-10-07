@@ -37,7 +37,7 @@ jobs:
         run: |
           python "artifact.py" \
             --items "圣遗物.csv" \
-            --sets "圣遗物套装表.csv" \
+            --sets "圣遗物套装.csv" \
             --out "build/圣遗物.json" \
             --struct-id 1077936134 \
             --start-index 1
@@ -47,7 +47,7 @@ jobs:
         run: |
           python "generate_txt.py" \
             --items "圣遗物.csv" \
-            --sets "圣遗物套装表.csv" \
+            --sets "圣遗物套装.csv" \
             --out "build/圣遗物.txt" \
             --max-title-len 200
 
@@ -55,7 +55,7 @@ jobs:
       - name: Generate 圣遗物套装.json
         run: |
           python "artifact_set.py" \
-            --csv "圣遗物套装表.csv" \
+            --csv "圣遗物套装.csv" \
             --out "build/圣遗物套装.json" \
             --struct-id 1077936135
 
