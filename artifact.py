@@ -71,7 +71,7 @@ def make_entry(key_index, name, config_id, tag_color, price, desc, struct_id=STR
                 "structId": struct_id,
                 "type": "Struct",
                 "value": [
-                    {"param_type":"String","value":name},
+                    {"param_type":"Int32","value": str(key_index)},
                     {"param_type":"ConfigReference","value":str(config_id)},
                     {"param_type":"Int32","value":to_int_str(tag_color)},
                     {"param_type":"Int32","value":to_int_str(price)},
@@ -115,7 +115,7 @@ def main(items_csv, sets_csv, out_json, struct_id=STRUCT_ID, start_index=1):
 
     obj = {
         "type":"Dict",
-        "key_type":"String",
+        "key_type":"Int32",
         "value_type":"Struct",
         "value": entries,
         "value_structId": struct_id
