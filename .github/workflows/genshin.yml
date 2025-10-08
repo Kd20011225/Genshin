@@ -49,7 +49,6 @@ jobs:
             --items "圣遗物.csv" \
             --sets "圣遗物套装.csv" \
             --out "build/圣遗物.txt" \
-            --max-title-len 200
 
       # Sets → JSON
       - name: Generate 圣遗物套装.json
