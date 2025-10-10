@@ -53,7 +53,7 @@ jobs:
       # Sets → TXT (NEW: double-space between segments, no 基础效果)
       - name: Generate 圣遗物套装_文本.txt
         run: |
-          python "artifact_set.py" \
+          python "artifact_set_txt.py" \
             --sets "圣遗物套装.csv" \
             --out "build/圣遗物套装_文本.txt"
 
