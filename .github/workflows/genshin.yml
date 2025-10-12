@@ -69,8 +69,14 @@ jobs:
       - name: Generate 职业强化.json
         run: |
           python "upgrades.py" \
-            --csv "职业强化.csv" \
-            --out "build/职业强化.json"
+            --csv "狩魂者职业强化.csv" \
+            --out "build/狩魂者职业强化.json"
+
+      - name: Generate 职业强化.json
+        run: |
+          python "upgrades.py" \
+            --csv "机巧师职业强化.csv" \
+            --out "build/机巧师职业强化.json"
 
       - name: Upload build outputs
         uses: actions/upload-artifact@v4
