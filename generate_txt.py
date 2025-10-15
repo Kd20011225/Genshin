@@ -1,115 +1,99 @@
 import csv
-import re
-import sys
 from pathlib import Path
 
 GREEN = "#71db60"
-MAX_TITLE_LEN = 200
-MAX_BLOCK_LEN = 200  # literal characters, spaces and the two chars '\'+'n' both count
 
-def detect_set_columns(headers):
-    """Return headers like 套装1, 套装2, ... sorted by number."""
-    cols = [h for h in headers if re.fullmatch(r"套装\d+", h or "")]
-    cols.sort(key=lambda x: int(re.findall(r"\d+", x)[0]))
-    return cols
-
-def load_sets(path_sets):
+def load_sets(sets_csv: str):
     """
-    Load set definitions.
-    Returns: { set_name: [(need, eff_full, eff_short), ...] }
+    Load sets into:
+      { set_name: summary_text }
+    Prefers column '套装效果简略描述' (single summary for all effects).
+    If not found (or empty), falls back to joining 套装效果1..3 (without 2/4件套前缀).
     """
     m = {}
-    with open(path_sets, "r", encoding="utf-8-sig", newline="") as f:
+    with open(sets_csv, "r", encoding="utf-8-sig", newline="") as f:
         r = csv.DictReader(f)
         if not r.fieldnames:
-            raise SystemExit(f"{path_sets} 缺少表头")
+            raise SystemExit(f"{sets_csv} 缺少表头")
+        headers = [h or "" for h in r.fieldnames]
+
+        has_single_summary = ("套装效果简略描述" in headers)
+
         for row in r:
             name = (row.get("名字") or "").strip()
             if not name:
                 continue
-            triples = []
-            # support up to 10 pairs
-            for i in range(1, 11):
-                need = (row.get(f"套装需求{i}") or "").strip()
-                eff_full  = (row.get(f"套装效果{i}") or "").strip()
-                eff_short = (row.get(f"套装效果{i}简略描述") or "").strip()
-                if need and eff_full:
-                    triples.append((need, eff_full, eff_short))
-            m[name] = triples
+
+            summary = ""
+            if has_single_summary:
+                summary = (row.get("套装效果简略描述") or "").strip()
+
+            if not summary:
+                # fall back: concat all 套装效果N with '；'
+                effects = []
+                for i in range(1, 11):
+                    eff = (row.get(f"套装效果{i}") or "").strip()
+                    if eff:
+                        effects.append(eff)
+                summary = "；".join(effects) if effects else ""
+
+            m[name] = summary
     return m
 
-def build_set_section(set_name, triples):
-    """
-    Build one set section using 简略描述优先:
-      <color=#71db60>套装名</color>\\n{need}件套：{short_or_full}\\n...
-    """
-    segs = [f"<color={GREEN}>{set_name}</color>"]
-    for need, eff_full, eff_short in triples:
-        eff = eff_short if eff_short else eff_full
-        segs.append(f"{need}件套：{eff}")
-    return "\\n".join(segs)  # keep literal backslash-n
+def detect_set_column(headers):
+    """Find the single set column. Accepts '套装' or legacy '套装1'."""
+    if "套装" in headers:
+        return "套装"
+    if "套装1" in headers:
+        return "套装1"
+    raise SystemExit(f"圣遗物.csv 需要列：套装（或 套装1）；实际列：{headers}")
 
-def make_block_text(item_row, set_cols, sets_map):
+def build_block(base_effect: str, set_name: str, summary: str):
     """
-    Compose the whole block for one item (always short-or-full):
-      (基础效果)\\n<colored set A>...\\n<colored set B>...\\n...
+    Build one block using literal \\n:
+      (基础效果)\\n<color=#71db60>套装名</color>\\n{简略描述}
     """
-    base_eff = (item_row.get("基础效果") or "").strip()
     parts = []
-    if base_eff:
-        parts.append(f"({base_eff})")
+    if base_effect:
+        parts.append(f"({base_effect})")
+    parts.append(f"<color={GREEN}>{set_name}</color>")
+    parts.append(summary or "")
+    return "\\n".join(parts)
 
-    for col in set_cols:
-        sname = (item_row.get(col) or "").strip()
-        if not sname:
-            continue
-        triples = sets_map.get(sname, [])
-        if triples:
-            parts.append(build_set_section(sname, triples))
-        else:
-            # set not found => show only the colored name
-            parts.append(f"<color={GREEN}>{sname}</color>")
-
-    return "\\n".join(parts) if parts else ""
-
-def main(items_csv, sets_csv, out_txt):
+def main(items_csv: str, sets_csv: str, out_txt: str):
     sets_map = load_sets(sets_csv)
 
     out_lines = []
-
     with open(items_csv, "r", encoding="utf-8-sig", newline="") as f:
         r = csv.DictReader(f)
         headers = [(h or "").strip() for h in (r.fieldnames or [])]
 
-        # required columns
+        # Required columns (single set)
         for col in ("卡牌标题", "基础效果"):
             if col not in headers:
                 raise SystemExit(f"{items_csv} 需要列：{col}；实际列：{headers}")
+        set_col = detect_set_column(headers)
 
-        set_cols = detect_set_columns(headers)
-
-        for csv_row, row in enumerate(r, start=2):  # header is line 1
+        for row in r:
             title = (row.get("卡牌标题") or "").strip()
             if not title:
                 continue
+            base  = (row.get("基础效果") or "").strip()
+            sname = (row.get(set_col) or "").strip()
 
-            # Title length guard
-            if len(title) > MAX_TITLE_LEN:
-                raise SystemExit(
-                    f"Error: 第{csv_row}行 卡牌标题 超过{MAX_TITLE_LEN}字符（len={len(title)}）：{title}"
-                )
+            if not sname:
+                # still write title with empty block
+                out_lines.append(title)
+                out_lines.append("")
+                out_lines.append("")
+                continue
 
-            block = make_block_text(row, set_cols, sets_map)
-
-            # Block length guard (counts spaces and literal '\n')
-            if len(block) > MAX_BLOCK_LEN:
-                raise SystemExit(
-                    f"Error: 第{csv_row}行《{title}》 描述长度超过 {MAX_BLOCK_LEN}（len={len(block)}）。"
-                )
+            summary = sets_map.get(sname, "")
+            block = build_block(base, sname, summary)
 
             out_lines.append(title)
             out_lines.append(block)
-            out_lines.append("")
+            out_lines.append("")  # blank separator
 
     outp = Path(out_txt)
     outp.parent.mkdir(parents=True, exist_ok=True)
@@ -118,9 +102,7 @@ def main(items_csv, sets_csv, out_txt):
 
 if __name__ == "__main__":
     import argparse
-    ap = argparse.ArgumentParser(
-        description="由两张CSV生成描述TXT；始终使用套装简略描述（缺失则回退完整描述），并强制200字符限制。"
-    )
+    ap = argparse.ArgumentParser(description="从单套装圣遗物.csv 与 圣遗物套装.csv 生成 TXT（仅写 套装效果简略描述；含(基础效果)；套装名后有字面 \\n）")
     ap.add_argument("--items", required=True, help="圣遗物.csv")
     ap.add_argument("--sets", required=True, help="圣遗物套装.csv")
     ap.add_argument("--out", required=True, help="输出 TXT 路径")
