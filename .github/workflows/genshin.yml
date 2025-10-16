@@ -78,6 +78,12 @@ jobs:
             --csv "机巧师职业强化.csv" \
             --out "build/机巧师职业强化.json"
 
+      - name: Generate 职业强化.json
+        run: |
+          python "upgrades.py" \
+            --csv "符文咏者职业强化.csv" \
+            --out "build/符文咏者职业强化.json"
+
       - name: Upload build outputs
         uses: actions/upload-artifact@v4
         with:
