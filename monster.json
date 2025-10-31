@@ -1,0 +1,440 @@
+{
+   "type": "Dict",
+   "key_type": "String",
+   "value_type": "Struct",
+   "value": [
+      {
+         "key": {
+            "param_type": "String",
+            "value": "丘丘人"
+         },
+         "value": {
+            "param_type": "Struct",
+            "value": {
+               "structId": "1077936130",
+               "type": "Struct",
+               "value": [
+                  {
+                     "param_type": "EntityReference",
+                     "value": "1082130434"
+                  },
+                  {
+                     "param_type": "Int32",
+                     "value": "48"
+                  },
+                  {
+                     "param_type": "Int32",
+                     "value": "4"
+                  }
+               ]
+            }
+         }
+      },
+      {
+         "key": {
+            "param_type": "String",
+            "value": "火箭丘丘人"
+         },
+         "value": {
+            "param_type": "Struct",
+            "value": {
+               "structId": "1077936130",
+               "type": "Struct",
+               "value": [
+                  {
+                     "param_type": "EntityReference",
+                     "value": "1082130435"
+                  },
+                  {
+                     "param_type": "Int32",
+                     "value": "38"
+                  },
+                  {
+                     "param_type": "Int32",
+                     "value": "4"
+                  }
+               ]
+            }
+         }
+      },
+      {
+         "key": {
+            "param_type": "String",
+            "value": "丘丘王"
+         },
+         "value": {
+            "param_type": "Struct",
+            "value": {
+               "structId": "1077936130",
+               "type": "Struct",
+               "value": [
+                  {
+                     "param_type": "EntityReference",
+                     "value": "1082130436"
+                  },
+                  {
+                     "param_type": "Int32",
+                     "value": "883"
+                  },
+                  {
+                     "param_type": "Int32",
+                     "value": "1"
+                  }
+               ]
+            }
+         }
+      },
+      {
+         "key": {
+            "param_type": "String",
+            "value": "火史莱姆"
+         },
+         "value": {
+            "param_type": "Struct",
+            "value": {
+               "structId": "1077936130",
+               "type": "Struct",
+               "value": [
+                  {
+                     "param_type": "EntityReference",
+                     "value": "1082130437"
+                  },
+                  {
+                     "param_type": "Int32",
+                     "value": "25"
+                  },
+                  {
+                     "param_type": "Int32",
+                     "value": "4"
+                  }
+               ]
+            }
+         }
+      },
+      {
+         "key": {
+            "param_type": "String",
+            "value": "打手丘丘人"
+         },
+         "value": {
+            "param_type": "Struct",
+            "value": {
+               "structId": "1077936130",
+               "type": "Struct",
+               "value": [
+                  {
+                     "param_type": "EntityReference",
+                     "value": "1082130438"
+                  },
+                  {
+                     "param_type": "Int32",
+                     "value": "61"
+                  },
+                  {
+                     "param_type": "Int32",
+                     "value": "3"
+                  }
+               ]
+            }
+         }
+      },
+      {
+         "key": {
+            "param_type": "String",
+            "value": "木盾丘丘人"
+         },
+         "value": {
+            "param_type": "Struct",
+            "value": {
+               "structId": "1077936130",
+               "type": "Struct",
+               "value": [
+                  {
+                     "param_type": "EntityReference",
+                     "value": "1082130439"
+                  },
+                  {
+                     "param_type": "Int32",
+                     "value": "517"
+                  },
+                  {
+                     "param_type": "Int32",
+                     "value": "1"
+                  }
+               ]
+            }
+         }
+      },
+      {
+         "key": {
+            "param_type": "String",
+            "value": "火斧丘丘人"
+         },
+         "value": {
+            "param_type": "Struct",
+            "value": {
+               "structId": "1077936130",
+               "type": "Struct",
+               "value": [
+                  {
+                     "param_type": "EntityReference",
+                     "value": "1082130440"
+                  },
+                  {
+                     "param_type": "Int32",
+                     "value": "247"
+                  },
+                  {
+                     "param_type": "Int32",
+                     "value": "1"
+                  }
+               ]
+            }
+         }
+      },
+      {
+         "key": {
+            "param_type": "String",
+            "value": "水丘丘萨满"
+         },
+         "value": {
+            "param_type": "Struct",
+            "value": {
+               "structId": "1077936130",
+               "type": "Struct",
+               "value": [
+                  {
+                     "param_type": "EntityReference",
+                     "value": "1082130441"
+                  },
+                  {
+                     "param_type": "Int32",
+                     "value": "53"
+                  },
+                  {
+                     "param_type": "Int32",
+                     "value": "3"
+                  }
+               ]
+            }
+         }
+      },
+      {
+         "key": {
+            "param_type": "String",
+            "value": "异变草斧丘丘人"
+         },
+         "value": {
+            "param_type": "Struct",
+            "value": {
+               "structId": "1077936130",
+               "type": "Struct",
+               "value": [
+                  {
+                     "param_type": "EntityReference",
+                     "value": "1082130442"
+                  },
+                  {
+                     "param_type": "Int32",
+                     "value": "436"
+                  },
+                  {
+                     "param_type": "Int32",
+                     "value": "1"
+                  }
+               ]
+            }
+         }
+      },
+      {
+         "key": {
+            "param_type": "String",
+            "value": "异变雷斧丘丘人"
+         },
+         "value": {
+            "param_type": "Struct",
+            "value": {
+               "structId": "1077936130",
+               "type": "Struct",
+               "value": [
+                  {
+                     "param_type": "EntityReference",
+                     "value": "1082130443"
+                  },
+                  {
+                     "param_type": "Int32",
+                     "value": "296"
+                  },
+                  {
+                     "param_type": "Int32",
+                     "value": "1"
+                  }
+               ]
+            }
+         }
+      },
+      {
+         "key": {
+            "param_type": "String",
+            "value": "大雷史莱姆"
+         },
+         "value": {
+            "param_type": "Struct",
+            "value": {
+               "structId": "1077936130",
+               "type": "Struct",
+               "value": [
+                  {
+                     "param_type": "EntityReference",
+                     "value": "1082130444"
+                  },
+                  {
+                     "param_type": "Int32",
+                     "value": "145"
+                  },
+                  {
+                     "param_type": "Int32",
+                     "value": "1"
+                  }
+               ]
+            }
+         }
+      },
+      {
+         "key": {
+            "param_type": "String",
+            "value": "大冰史莱姆"
+         },
+         "value": {
+            "param_type": "Struct",
+            "value": {
+               "structId": "1077936130",
+               "type": "Struct",
+               "value": [
+                  {
+                     "param_type": "EntityReference",
+                     "value": "1082130445"
+                  },
+                  {
+                     "param_type": "Int32",
+                     "value": "168"
+                  },
+                  {
+                     "param_type": "Int32",
+                     "value": "1"
+                  }
+               ]
+            }
+         }
+      },
+      {
+         "key": {
+            "param_type": "String",
+            "value": "大岩史莱姆"
+         },
+         "value": {
+            "param_type": "Struct",
+            "value": {
+               "structId": "1077936130",
+               "type": "Struct",
+               "value": [
+                  {
+                     "param_type": "EntityReference",
+                     "value": "1082130446"
+                  },
+                  {
+                     "param_type": "Int32",
+                     "value": "212"
+                  },
+                  {
+                     "param_type": "Int32",
+                     "value": "1"
+                  }
+               ]
+            }
+         }
+      },
+      {
+         "key": {
+            "param_type": "String",
+            "value": "小盗宝"
+         },
+         "value": {
+            "param_type": "Struct",
+            "value": {
+               "structId": "1077936130",
+               "type": "Struct",
+               "value": [
+                  {
+                     "param_type": "EntityReference",
+                     "value": "1082130447"
+                  },
+                  {
+                     "param_type": "Int32",
+                     "value": "54"
+                  },
+                  {
+                     "param_type": "Int32",
+                     "value": "3"
+                  }
+               ]
+            }
+         }
+      },
+      {
+         "key": {
+            "param_type": "String",
+            "value": "中盗宝"
+         },
+         "value": {
+            "param_type": "Struct",
+            "value": {
+               "structId": "1077936130",
+               "type": "Struct",
+               "value": [
+                  {
+                     "param_type": "EntityReference",
+                     "value": "1082130448"
+                  },
+                  {
+                     "param_type": "Int32",
+                     "value": "125"
+                  },
+                  {
+                     "param_type": "Int32",
+                     "value": "1"
+                  }
+               ]
+            }
+         }
+      },
+      {
+         "key": {
+            "param_type": "String",
+            "value": "爆炸箭"
+         },
+         "value": {
+            "param_type": "Struct",
+            "value": {
+               "structId": "1077936130",
+               "type": "Struct",
+               "value": [
+                  {
+                     "param_type": "EntityReference",
+                     "value": "1082130449"
+                  },
+                  {
+                     "param_type": "Int32",
+                     "value": "99"
+                  },
+                  {
+                     "param_type": "Int32",
+                     "value": "2"
+                  }
+               ]
+            }
+         }
+      }
+   ],
+   "value_structId": "1077936130"
+}
