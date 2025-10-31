@@ -69,7 +69,7 @@ jobs:
       - name: Generate 怪物.json (single file)
         run: |
           python build_monsters_json.py \
-            --csv "怪物.csv" \
+            --csv "怪物数据.csv" \
             --out "build/怪物.json" 
 
       # 职业强化 → JSON
