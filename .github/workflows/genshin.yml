@@ -1,4 +1,4 @@
-name: Genshin
+oaname: Genshin
 
 on:
   push:
@@ -33,11 +33,11 @@ jobs:
         run: mkdir -p build
       
       # Monster Introduction -> Json
-      - name: Generate 角斗士.json
+      - name: Generate 角斗士介绍.json
         run: |
           python monster_intro.py \
             --csv "怪物介绍.csv" \
-            --out "build/角斗士.json" \
+            --out "build/角斗士介绍.json" \
             --struct-id 1077936134
 
       # Items → JSON
