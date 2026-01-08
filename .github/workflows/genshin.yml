@@ -35,7 +35,7 @@ jobs:
       # Monster Introduction -> Json
       - name: Generate 角斗士介绍.json
         run: |
-          python monster_intro.py \
+          python 超级斗鸡/monster_intro.py \
             --csv "怪物介绍.csv" \
             --out "build/角斗士介绍.json" \
             --struct-id 1077936134
