@@ -33,71 +33,71 @@ jobs:
         run: mkdir -p build
       
       # Monster Introduction -> Json
-      - name: Generate 角斗士.json
+      - name: Generate 角斗士介绍.json
         run: |
-          python monster_intro.py \
-            --csv "怪物介绍.csv" \
-            --out "build/角斗士.json" \
+          python 超级斗鸡/monster_intro.py \
+            --csv "超级斗鸡/怪物介绍.csv" \
+            --out "build/角斗士介绍.json" \
             --struct-id 1077936134
 
       # Items → JSON
-      - name: Generate 圣遗物.json
-        run: |
-          python "artifact.py" \
-            --items "圣遗物.csv" \
-            --sets "圣遗物套装.csv" \
-            --out "build/圣遗物.json" \
-            --struct-id 1077936134 \
-            --start-index 1
+      # - name: Generate 圣遗物.json
+      #   run: |
+      #     python "artifact.py" \
+      #       --items "圣遗物.csv" \
+      #       --sets "圣遗物套装.csv" \
+      #       --out "build/圣遗物.json" \
+      #       --struct-id 1077936134 \
+      #       --start-index 1
 
       # Items+Sets → TXT
-      - name: Generate 圣遗物.txt
-        run: |
-          python "generate_txt.py" \
-            --items "圣遗物.csv" \
-            --sets "圣遗物套装.csv" \
-            --out "build/圣遗物.txt" \
+      # - name: Generate 圣遗物.txt
+      #   run: |
+      #     python "generate_txt.py" \
+      #       --items "圣遗物.csv" \
+      #       --sets "圣遗物套装.csv" \
+      #       --out "build/圣遗物.txt" \
       
       # Sets → TXT (NEW: double-space between segments, no 基础效果)
-      - name: Generate 圣遗物套装_文本.txt
-        run: |
-          python "artifact_set_txt.py" \
-            --sets "圣遗物套装.csv" \
-            --out "build/圣遗物套装_文本.txt"
+      # - name: Generate 圣遗物套装_文本.txt
+      #   run: |
+      #     python "artifact_set_txt.py" \
+      #       --sets "圣遗物套装.csv" \
+      #       --out "build/圣遗物套装_文本.txt"
 
-      # Sets → JSON
-      - name: Generate 圣遗物套装.json
-        run: |
-          python "artifact_set.py" \
-            --csv "圣遗物套装.csv" \
-            --out "build/圣遗物套装.json" \
-            --struct-id 1077936135
+      # # Sets → JSON
+      # - name: Generate 圣遗物套装.json
+      #   run: |
+      #     python "artifact_set.py" \
+      #       --csv "圣遗物套装.csv" \
+      #       --out "build/圣遗物套装.json" \
+      #       --struct-id 1077936135
 
       # 怪物 -> JSON
-      - name: Generate 怪物.json (single file)
-        run: |
-          python build_monster_json.py \
-            --csv "怪物数据.csv" \
-            --out "build/怪物.json" 
+      # - name: Generate 怪物.json (single file)
+      #   run: |
+      #     python 超级斗鸡/build_monster_json.py \
+      #       --csv "超级斗鸡/怪物数据.csv" \
+      #       --out "build/怪物.json" 
 
       # 职业强化 → JSON
-      - name: Generate 职业强化.json
-        run: |
-          python "upgrades.py" \
-            --csv "狩魂者职业强化.csv" \
-            --out "build/狩魂者职业强化.json"
+      # - name: Generate 职业强化.json
+      #   run: |
+      #     python "upgrades.py" \
+      #       --csv "狩魂者职业强化.csv" \
+      #       --out "build/狩魂者职业强化.json"
 
-      - name: Generate 职业强化.json
-        run: |
-          python "upgrades.py" \
-            --csv "机巧师职业强化.csv" \
-            --out "build/机巧师职业强化.json"
+      # - name: Generate 职业强化.json
+      #   run: |
+      #     python "upgrades.py" \
+      #       --csv "机巧师职业强化.csv" \
+      #       --out "build/机巧师职业强化.json"
 
-      - name: Generate 职业强化.json
-        run: |
-          python "upgrades.py" \
-            --csv "符文咏者职业强化.csv" \
-            --out "build/符文咏者职业强化.json"
+      # - name: Generate 职业强化.json
+      #   run: |
+      #     python "upgrades.py" \
+      #       --csv "符文咏者职业强化.csv" \
+      #       --out "build/符文咏者职业强化.json"
 
       - name: Upload build outputs
         uses: actions/upload-artifact@v4

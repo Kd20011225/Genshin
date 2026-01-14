@@ -1,0 +1,380 @@
+{ 
+   "type" : "Dict", 
+   "key_type" : "Int32", 
+   "value_type" : "Struct", 
+   "value" : [ 
+      { 
+         "key" : { 
+            "param_type" : "Int32", 
+            "value" : "1"
+         }, 
+         "value" : { 
+            "param_type" : "Struct", 
+            "value" : { 
+               "structId" : "1077936131", 
+               "type" : "Struct", 
+               "value" : [ 
+                  { 
+                     "param_type" : "EntityReference", 
+                     "value" : "1077936133"
+                  }, 
+                  { 
+                     "param_type" : "String", 
+                     "value" : "捕兽夹"
+                  }, 
+                  { 
+                     "param_type" : "String", 
+                     "value" : "永久禁锢第一个接触到的角斗士。"
+                  }, 
+                  { 
+                     "param_type" : "Int32", 
+                     "value" : "2"
+                  }
+               ]
+            }
+         }
+      }, 
+      { 
+         "key" : { 
+            "param_type" : "Int32", 
+            "value" : "2"
+         }, 
+         "value" : { 
+            "param_type" : "Struct", 
+            "value" : { 
+               "structId" : "1077936131", 
+               "type" : "Struct", 
+               "value" : [ 
+                  { 
+                     "param_type" : "EntityReference", 
+                     "value" : "1077936132"
+                  }, 
+                  { 
+                     "param_type" : "String", 
+                     "value" : "血药"
+                  }, 
+                  { 
+                     "param_type" : "String", 
+                     "value" : "碰到的残血角斗士回复全部生命值"
+                  }, 
+                  { 
+                     "param_type" : "Int32", 
+                     "value" : "1"
+                  }
+               ]
+            }
+         }
+      }, 
+      { 
+         "key" : { 
+            "param_type" : "Int32", 
+            "value" : "3"
+         }, 
+         "value" : { 
+            "param_type" : "Struct", 
+            "value" : { 
+               "structId" : "1077936131", 
+               "type" : "Struct", 
+               "value" : [ 
+                  { 
+                     "param_type" : "EntityReference", 
+                     "value" : "1077936138"
+                  }, 
+                  { 
+                     "param_type" : "String", 
+                     "value" : "传播瘟疫"
+                  }, 
+                  { 
+                     "param_type" : "String", 
+                     "value" : "碰到的角斗士获得瘟疫，持续损失生命值，并传播给周围其它所有阵营的角斗士"
+                  }, 
+                  { 
+                     "param_type" : "Int32", 
+                     "value" : "1"
+                  }
+               ]
+            }
+         }
+      }, 
+      { 
+         "key" : { 
+            "param_type" : "Int32", 
+            "value" : "4"
+         }, 
+         "value" : { 
+            "param_type" : "Struct", 
+            "value" : { 
+               "structId" : "1077936131", 
+               "type" : "Struct", 
+               "value" : [ 
+                  { 
+                     "param_type" : "EntityReference", 
+                     "value" : "1077936139"
+                  }, 
+                  { 
+                     "param_type" : "String", 
+                     "value" : "你必须攻击那个"
+                  }, 
+                  { 
+                     "param_type" : "String", 
+                     "value" : "碰到的角斗士强制嘲讽所有敌对阵营角斗士"
+                  }, 
+                  { 
+                     "param_type" : "Int32", 
+                     "value" : "1"
+                  }
+               ]
+            }
+         }
+      }, 
+      { 
+         "key" : { 
+            "param_type" : "Int32", 
+            "value" : "5"
+         }, 
+         "value" : { 
+            "param_type" : "Struct", 
+            "value" : { 
+               "structId" : "1077936131", 
+               "type" : "Struct", 
+               "value" : [ 
+                  { 
+                     "param_type" : "EntityReference", 
+                     "value" : "1077936140"
+                  }, 
+                  { 
+                     "param_type" : "String", 
+                     "value" : "爆弹"
+                  }, 
+                  { 
+                     "param_type" : "String", 
+                     "value" : "碰到的和周围的角斗士受到火元素伤害并被击飞"
+                  }, 
+                  { 
+                     "param_type" : "Int32", 
+                     "value" : "1"
+                  }
+               ]
+            }
+         }
+      }, 
+      { 
+         "key" : { 
+            "param_type" : "Int32", 
+            "value" : "6"
+         }, 
+         "value" : { 
+            "param_type" : "Struct", 
+            "value" : { 
+               "structId" : "1077936131", 
+               "type" : "Struct", 
+               "value" : [ 
+                  { 
+                     "param_type" : "EntityReference", 
+                     "value" : "1077936141"
+                  }, 
+                  { 
+                     "param_type" : "String", 
+                     "value" : "魅惑菇"
+                  }, 
+                  { 
+                     "param_type" : "String", 
+                     "value" : "碰到的角斗士被策反，无法对精英怪生效"
+                  }, 
+                  { 
+                     "param_type" : "Int32", 
+                     "value" : "1"
+                  }
+               ]
+            }
+         }
+      }, 
+      { 
+         "key" : { 
+            "param_type" : "Int32", 
+            "value" : "7"
+         }, 
+         "value" : { 
+            "param_type" : "Struct", 
+            "value" : { 
+               "structId" : "1077936131", 
+               "type" : "Struct", 
+               "value" : [ 
+                  { 
+                     "param_type" : "EntityReference", 
+                     "value" : "1077936142"
+                  }, 
+                  { 
+                     "param_type" : "String", 
+                     "value" : "炸弹"
+                  }, 
+                  { 
+                     "param_type" : "String", 
+                     "value" : "摧毁周围所有装置和陷阱"
+                  }, 
+                  { 
+                     "param_type" : "Int32", 
+                     "value" : "1"
+                  }
+               ]
+            }
+         }
+      }, 
+      { 
+         "key" : { 
+            "param_type" : "Int32", 
+            "value" : "8"
+         }, 
+         "value" : { 
+            "param_type" : "Struct", 
+            "value" : { 
+               "structId" : "1077936131", 
+               "type" : "Struct", 
+               "value" : [ 
+                  { 
+                     "param_type" : "EntityReference", 
+                     "value" : "1077936143"
+                  }, 
+                  { 
+                     "param_type" : "String", 
+                     "value" : "元素护盾"
+                  }, 
+                  { 
+                     "param_type" : "String", 
+                     "value" : "使所有角斗士获得50元素抗性"
+                  }, 
+                  { 
+                     "param_type" : "Int32", 
+                     "value" : "1"
+                  }
+               ]
+            }
+         }
+      }, 
+      { 
+         "key" : { 
+            "param_type" : "Int32", 
+            "value" : "9"
+         }, 
+         "value" : { 
+            "param_type" : "Struct", 
+            "value" : { 
+               "structId" : "1077936131", 
+               "type" : "Struct", 
+               "value" : [ 
+                  { 
+                     "param_type" : "EntityReference", 
+                     "value" : "1077936147"
+                  }, 
+                  { 
+                     "param_type" : "String", 
+                     "value" : "锤子"
+                  }, 
+                  { 
+                     "param_type" : "String", 
+                     "value" : "周期性的击飞周围"
+                  }, 
+                  { 
+                     "param_type" : "Int32", 
+                     "value" : "1"
+                  }
+               ]
+            }
+         }
+      }, 
+      { 
+         "key" : { 
+            "param_type" : "Int32", 
+            "value" : "10"
+         }, 
+         "value" : { 
+            "param_type" : "Struct", 
+            "value" : { 
+               "structId" : "1077936131", 
+               "type" : "Struct", 
+               "value" : [ 
+                  { 
+                     "param_type" : "EntityReference", 
+                     "value" : "1077936148"
+                  }, 
+                  { 
+                     "param_type" : "String", 
+                     "value" : "戏法空间"
+                  }, 
+                  { 
+                     "param_type" : "String", 
+                     "value" : "范围内角斗士移动速度提高"
+                  }, 
+                  { 
+                     "param_type" : "Int32", 
+                     "value" : "1"
+                  }
+               ]
+            }
+         }
+      }, 
+      { 
+         "key" : { 
+            "param_type" : "Int32", 
+            "value" : "11"
+         }, 
+         "value" : { 
+            "param_type" : "Struct", 
+            "value" : { 
+               "structId" : "1077936131", 
+               "type" : "Struct", 
+               "value" : [ 
+                  { 
+                     "param_type" : "EntityReference", 
+                     "value" : "1077936136"
+                  }, 
+                  { 
+                     "param_type" : "String", 
+                     "value" : "冰喷激光"
+                  }, 
+                  { 
+                     "param_type" : "String", 
+                     "value" : "每3秒造成伤害并击退"
+                  }, 
+                  { 
+                     "param_type" : "Int32", 
+                     "value" : "1"
+                  }
+               ]
+            }
+         }
+      }, 
+      { 
+         "key" : { 
+            "param_type" : "Int32", 
+            "value" : "12"
+         }, 
+         "value" : { 
+            "param_type" : "Struct", 
+            "value" : { 
+               "structId" : "1077936131", 
+               "type" : "Struct", 
+               "value" : [ 
+                  { 
+                     "param_type" : "EntityReference", 
+                     "value" : "1077936149"
+                  }, 
+                  { 
+                     "param_type" : "String", 
+                     "value" : "收集者"
+                  }, 
+                  { 
+                     "param_type" : "String", 
+                     "value" : "周围有角斗士死亡时，使用者获得摩拉"
+                  }, 
+                  { 
+                     "param_type" : "Int32", 
+                     "value" : "1"
+                  }
+               ]
+            }
+         }
+      }
+   ], 
+   "value_structId" : "1077936131"
+}
