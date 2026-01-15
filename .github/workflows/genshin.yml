@@ -74,11 +74,11 @@ jobs:
       #       --struct-id 1077936135
 
       # 怪物 -> JSON
-      # - name: Generate 怪物.json (single file)
-      #   run: |
-      #     python 超级斗鸡/build_monster_json.py \
-      #       --csv "超级斗鸡/怪物数据.csv" \
-      #       --out "build/怪物.json" 
+      - name: Generate 怪物.json (single file)
+        run: |
+          python 超级斗鸡/build_monster_json.py \
+            --csv "超级斗鸡/怪物数据.csv" \
+            --out "build/怪物.json" 
 
       # 职业强化 → JSON
       # - name: Generate 职业强化.json
